@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>ניהול אישורי הגעה</title>
+  <meta name="theme-color" content="#1d4ed8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin">
+  <main class="page">
+    <section class="card" id="login-card" hidden>
+      <form id="login-form">
+        <h2>כניסת מארגנים</h2>
+        <label for="email">אימייל</label>
+        <input id="email" type="email" autocomplete="username" required dir="ltr">
+        <label for="password">סיסמה</label>
+        <input id="password" type="password" autocomplete="current-password" required dir="ltr">
+        <p class="error" id="login-error" role="alert" hidden></p>
+        <button class="btn btn-primary" type="submit">כניסה</button>
+      </form>
+    </section>
+
+    <section id="dashboard" hidden>
+      <header class="admin-head">
+        <h1>אישורי הגעה · בר מצווה פלג</h1>
+        <button class="btn-link" id="logout">יציאה</button>
+      </header>
+
+      <div class="stats">
+        <div class="stat stat-main">
+          <span class="stat-num" id="total-guests">0</span>
+          <span class="stat-label">סה״כ מגיעים</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="total-rsvps">0</span>
+          <span class="stat-label">אישורים</span>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="חיפוש שם…">
+        <button class="btn btn-outline btn-sm" id="export">ייצוא CSV</button>
+      </div>
+      <p class="live"><span class="dot"></span> מתעדכן בזמן אמת</p>
+
+      <div class="card table-card">
+        <table>
+          <thead>
+            <tr><th>שם</th><th>מגיעים</th><th>נרשם</th><th><span class="sr-only">פעולות</span></th></tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <p class="empty" id="empty" hidden>עדיין אין אישורי הגעה</p>
+      </div>
+    </section>
+
+    <p class="error" id="fatal" role="alert" hidden></p>
+  </main>
+
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

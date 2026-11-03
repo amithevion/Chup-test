@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>בר מצווה פלג</title>
+  <meta name="description" content="הוזמנתם לבר המצווה של פלג · 18.12.26 · בית סמואלי, רעננה">
+  <meta property="og:title" content="בר מצווה פלג">
+  <meta property="og:description" content="יום שישי, 18.12.26 · 10:00 · בית סמואלי, רעננה. נשמח לאישור הגעה!">
+  <meta name="theme-color" content="#1d4ed8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">הוזמנתם לחגוג איתנו</p>
+      <h1>בר המצווה של<br><span>פלג</span></h1>
+      <p class="lede">נשמח לראותכם ביום המיוחד שלנו</p>
+    </header>
+
+    <section class="card details" aria-label="פרטי האירוע">
+      <div class="detail">
+        <span class="label">תאריך</span>
+        <span class="value">יום שישי, 18.12.26</span>
+      </div>
+      <div class="detail">
+        <span class="label">שעה</span>
+        <span class="value">10:00</span>
+      </div>
+      <div class="detail">
+        <span class="label">מקום</span>
+        <span class="value">בית סמואלי</span>
+        <span class="sub">פרדס משותף 94, רעננה</span>
+      </div>
+      <a class="btn btn-outline" id="waze" target="_blank" rel="noopener"
+         href="https://waze.com/ul?q=%D7%A4%D7%A8%D7%93%D7%A1%20%D7%9E%D7%A9%D7%95%D7%AA%D7%A3%2094%2C%20%D7%A8%D7%A2%D7%A0%D7%A0%D7%94&navigate=yes">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        ניווט ב-Waze
+      </a>
+    </section>
+
+    <section class="card" id="rsvp-card">
+      <form id="rsvp-form" novalidate>
+        <h2>אישור הגעה</h2>
+        <label for="full-name">שם מלא / משפחה</label>
+        <input id="full-name" name="full_name" type="text" autocomplete="name"
+               placeholder="לדוגמה: משפחת כהן" required minlength="2" maxlength="80">
+
+        <label for="guest-count">מספר מגיעים</label>
+        <select id="guest-count" name="guest_count" required></select>
+
+        <p class="error" id="form-error" role="alert" hidden></p>
+        <button class="btn btn-primary" type="submit">אישור הגעה</button>
+      </form>
+
+      <div class="thanks" id="thanks" hidden tabindex="-1">
+        <div class="check" aria-hidden="true">✓</div>
+        <h2>תודה, <span id="thanks-name"></span>!</h2>
+        <p id="thanks-text"></p>
+        <a class="btn btn-outline" href="https://waze.com/ul?q=%D7%A4%D7%A8%D7%93%D7%A1%20%D7%9E%D7%A9%D7%95%D7%AA%D7%A3%2094%2C%20%D7%A8%D7%A2%D7%A0%D7%A0%D7%94&navigate=yes" target="_blank" rel="noopener">ניווט ב-Waze</a>
+      </div>
+    </section>
+
+    <footer class="foot">מחכים לראותכם 💙</footer>
+  </main>
+
+  <script type="module" src="js/rsvp.js"></script>
+</body>
+</html>
